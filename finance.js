@@ -54,7 +54,7 @@ Finance.prototype.IRR = function(cfs) {
   if (!positive || !negative) throw new Error('IRR requires at least one positive value and one negative value');
   function npv(rate) {
     numberOfTries++;
-    if (numberOfTries > 1000) {
+    if (numberOfTries > 20000) {
       throw new Error('IRR can\'t find a result');
     }
     var rrate = (1 + rate/100);
